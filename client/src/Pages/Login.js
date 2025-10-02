@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { logo, background } from "../Assets/index";
+import { background ,logo} from "../Assets/index";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ const Login = () => {
     if (data.success) {
       navigate("/Dashboard");
     } else {
-      alert("Invalid email or password");
+      alert(data.message);
     }
   };
   return (
@@ -35,23 +36,16 @@ const Login = () => {
       }}>
       <div className="text-center">
         <img
-          className="w-80 h-70 mb-auto sm:mb-20 mx-auto min-w-[150px]"
+          className="w-10 rounded-full  mx-auto min-w-[150px]"
           src={logo}
-          alt="logo"
+          alt="log"
         />
         <form onSubmit={loginUser} className="mx-auto mt-4 text-left">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold mt-4 mb-2 text-gray-600 text-left">
+            <h1 className="text-3xl font-bold mt-4  text-gray-600 text-left">
               Login
             </h1>
-            <p className="text-gray-500 text-left">
-              Need an account?{" "}
-              <span
-                onClick={(e) => navigate("/register")}
-                className="text-lime-500 cursor-pointer">
-                Sign Up
-              </span>
-            </p>
+            
           </div>
           <div className="text-left">
             <label className="block mb-1">Email</label>
@@ -73,10 +67,18 @@ const Login = () => {
               className="w-full px-4 py-2 border rounded-lg mb-4"
             />
           </div>
+          <p className="text-gray-500 text-left p-2">
+              Need an account?{" "}
+              <span
+                onClick={(e) => navigate("/register")}
+                className="text-lime-500 cursor-pointer">
+                Sign Up
+              </span>
+            </p>
           <div className="flex justify-between items-center">
             <button
               type="submit"
-              className="bg-lime-500 text-white py-2 px-4 rounded-sm">
+              className="bg-lime-500 text-white py-2 px-4 rounded-lg">
               Login
             </button>
             <span className="text-sm text-gray-500 cursor-pointer">

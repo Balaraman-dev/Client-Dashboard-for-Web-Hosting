@@ -38,16 +38,16 @@ const ChartCard = ({ heading, fields }) => {
   }/${current.getFullYear()}`;
 
   return (
-    <div className="w-full sm:w-1/2 p-2">
+    <div className="w-full">
       <div className="bg-white rounded-lg shadow-md p-6 flex flex-col">
         <div className="flex flex-row justify-between items-center mb-4">
           <div className="text-lg font-bold">{heading}</div>
           <div className="text-sm text-gray-400">
             {date}&nbsp;&nbsp;
-            {currentTime}
+            {currentTime} 
           </div>
         </div>
-        <div className="flex flex-row w-full">
+        <div className="flex flex-row w-full mt-4 m-auto">
           <Pie data={data} />
         </div>
         <div className="w-full mt-4">

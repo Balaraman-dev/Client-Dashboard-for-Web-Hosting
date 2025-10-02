@@ -57,20 +57,18 @@ const Menubar = () => {
   };
 
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className="flex flex-col w-full sticky top-2">
       <div className="flex items-center justify-center h-20">
-        <img src={logo} alt="Company Logo" className="h-20 w-30 pt-5" />
+        <img src={logo} alt="Company Logo" className="rounded-full h-24 border-4 border-amber-500 mt-14" />
       </div>
       <div className="flex-1 flex flex-col justify-between">
         <div className="flex flex-col items-start pt-20">
-          <span className="px-5 py-2 text-black">Menu</span>
+          <span className="px-5 py-2 text-black text-xl font-semibold">Menu</span>
           {menuItems.map((item, index) => (
-            <a
+            <a 
               key={index}
               href={item.link}
-              className={`px-4 py-3 flex items-center ${
-                selectedItem === item ? "text-lime-500" : "hover:text-gray"
-              }`}
+              className={`w-full px-4 py-3 flex items-center hover:bg-white `}
               onClick={() => handleItemClick(item)}>
               <img src={item.icon} alt={item.name} className="h-5 w-5 mr-2" />
               <span className="hidden sm:inline-block">{item.name}</span>
@@ -82,8 +80,9 @@ const Menubar = () => {
           onClick={() => {
             window.location.href = "/";
           }}>
-          <img src={logout} alt="Logout" className="h-6 w-6 mr-2" />
-          <span className="hidden sm:inline-block text-red-500 text-2xl ">
+          
+          <img src={logout} alt="Logout" className="h-4 w-4 mr-2" />
+          <span className="hidden  sm:inline-block text-red-500 text-lg ">
             Logout
           </span>
         </div>

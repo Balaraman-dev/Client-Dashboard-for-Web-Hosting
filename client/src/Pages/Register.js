@@ -41,7 +41,7 @@ const Register = () => {
       }}>
       <div className="text-center mt-5">
         <img
-          className="w-80 h-70 mb-15 mx-auto min-w-[150px]"
+          className="w-10  mb-15 mx-auto min-w-[150px]"
           src={logo}
           alt="logo"
         />
@@ -50,14 +50,7 @@ const Register = () => {
             <h1 className="text-3xl font-bold mt-4 mb-2 text-gray-600 text-left">
               Register
             </h1>
-            <p className="text-gray-500 text-left">
-              Already have an account?{" "}
-              <span
-                onClick={(e) => navigate("/")}
-                className="text-lime-500 cursor-pointer">
-                Sign In
-              </span>
-            </p>
+          
           </div>
           <div className="text-left">
             <span className="">Full Name</span>
@@ -99,12 +92,21 @@ const Register = () => {
               className="w-full px-4 py-4 border rounded-lg mb-4"
             />
           </div>
+            <p className="text-gray-500 text-left p-2">
+              Already have an account?{" "}
+              <span
+                onClick={(e) => navigate("/")}
+                className="text-lime-500 cursor-pointer ">
+                Sign In
+              </span>
+            </p>
           <div className="flex justify-between">
             <button
               type="submit"
-              className="bg-lime-500 text-white py-2 px-4 rounded-sm">
+              className="bg-lime-500 text-white py-2 px-4 rounded-lg ">
               Register
             </button>
+
           </div>
         </form>
       </div>

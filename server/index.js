@@ -23,7 +23,7 @@ app.use("/api/register", async (req, res) => {
       password: hashedPassword,
     });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id },"secret", {
       expiresIn: "30d",
     });
 
@@ -34,21 +34,22 @@ app.use("/api/register", async (req, res) => {
 });
 
 app.use("/api/login", async (req, res) => {
-  try {
-    const user = await User.findOne({
-      email: req.body.email,
-      password: req.body.password,
-    });
-    if (!user) {
-      return res
-        .status(401)
-        .json({ success: false, message: "Invalid email or password" });
+    console.log(req.body);
+    try{
+      const user=await User.findOne({email: req.body.email});
+      if(!user){
+        return res.status(401).json({success:false,message:"Invalid credentials"});
+      }
+      const isMatch = await bcrypt.compare(req.body.password, user.password);
+        if (!isMatch) {
+          return res.status(400).json({success:false, message: "Incorrect Password" });
+        }
+        return res.status(200).json({success:true, message: "LoggedIn" });
+
+    }catch(e){
+      res.status(400).json({message:"error"});
     }
-    res.status(200).json({ success: true, data: user });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error });
-  }
-});
+  });
 
 app.use("/api/users", async (req, res) => {
   try {
@@ -65,7 +66,7 @@ app.use("/", (req, res) => {
 
 const startServer = async () => {
   try {
-    connectDB(process.env.MONGO_URI);
+    connectDB("mongodb://127.0.0.1:27017/dashboard");
     app.listen(5000, () => {
       console.log("Server is listening on port 5000");
     });

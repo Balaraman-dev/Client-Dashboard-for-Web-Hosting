@@ -16,15 +16,14 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-grow">
-        <div
-          className={`w-1/4 h-full bg-gray-200 ${
+        <div className={`w-1/5 h-full bg-gray-200  ${
             showMenu ? "" : "hidden"
-          } lg:block`}>
+          } lg:block `}>
           <Menubar />
         </div>
-        <div className="flex-1 sm:relative">
+        <div className="flex-1 sm:relative  ">
           <MenuToggle showMenu={showMenu} handleMenuToggle={handleMenuToggle} />
-          <div className="h-16 bg-white shadow-md">
+          <div className="h-16 bg-white shadow-md ">
             <Navbar pagename={"Dashboard"} />
           </div>
           <div className="flex flex-wrap justify-between mt-10 mx-4 sm:justify-start">
@@ -44,7 +43,7 @@ const Dashboard = () => {
                 color={"bg-gradient-to-r from-purple-500 to-pink-500"}
               />
             </div>
-            <div className="w-full lg:w-1/4 px-2 mb-4">
+            <div className="w-full lg:w-1/4 px-2 mb-4 ">
               <Card
                 title={"1.2K"}
                 subtitle={"Top Products/Services"}
@@ -60,7 +59,29 @@ const Dashboard = () => {
                 color={"bg-gradient-to-r from-lime-400 to-lime-600"}
               />
             </div>
-            <div className="flex flex-col sm:flex-row gap-2 justify-between w-full px-2 mb-4">
+            <h1 className="text-xl font-semibold ml-3 text-gray-400 mt-6"> Analysis </h1>
+            <div className="grid grid-cols-3  gap-4 w-full px-2 mb-4 mt-8">
+              <ChartComponent
+                heading="Total Active Users"
+                fields={[
+                  {
+                    name: "Today's active users",
+                    value: 300,
+                  },
+                  {
+                    name: "Yesterday's active users",
+                    value: 50,
+                  },
+                  {
+                    name: "Tomorrow's active users",
+                    value: 100,
+                  },
+                  {
+                    name: "Last Month's active users",
+                    value: 150,
+                  },
+                ]}
+              />
               <ChartComponent
                 heading="Total Active Users"
                 fields={[
@@ -103,6 +124,28 @@ const Dashboard = () => {
                   },
                 ]}
               />
+              <ChartComponent
+                heading="Participant Users"
+                fields={[
+                  {
+                    name: "Today's active users",
+                    value: 300,
+                  },
+                  {
+                    name: "Yesterday's active users",
+                    value: 50,
+                  },
+                  {
+                    name: "Tomorrow's active users",
+                    value: 100,
+                  },
+                  {
+                    name: "Last Month's active users",
+                    value: 150,
+                  },
+                ]}
+              />
+              
             </div>
           </div>
         </div>
