@@ -191,7 +191,7 @@ const HomeService = () => {
 
                   {/* Buttons */}
                   <div className="flex gap-2 pt-2">
-                    <button className="flex-1 flex items-center justify-center gap-1 bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition">
+                    <button className="flex-1 flex items-center justify-center gap-1 bg-blue-600 text-white px-3 py-3 rounded-lg text-sm hover:bg-blue-700 transition">
                       Manage Service
                     </button>
                     <button className="flex-1 px-3 py-1 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 text-sm transition">

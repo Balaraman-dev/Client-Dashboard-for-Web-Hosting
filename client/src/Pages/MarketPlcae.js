@@ -112,7 +112,7 @@ const MarketPlace = () => {
                   </div>
                 </div>
                 <div className="absolute bottom-3 left-3 right-3">
-                  <div className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-gray-700 mb-2 text-center">
+                  <div className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs text-gray-700 mb-2 text-center ">
                     {addon.category}
                   </div>
                 </div>
