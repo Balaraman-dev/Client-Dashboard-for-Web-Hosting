@@ -83,7 +83,7 @@ const Dashboard = () => {
                 ]}
               />
               <ChartComponent
-                heading="Total Active Users"
+                heading="Total Active Bookings"
                 fields={[
                   {
                     name: "Today's active users",
@@ -104,7 +104,7 @@ const Dashboard = () => {
                 ]}
               />
               <ChartComponent
-                heading="Total Active bookings"
+                heading="Participant users"
                 fields={[
                   {
                     name: "Today's active bookings",

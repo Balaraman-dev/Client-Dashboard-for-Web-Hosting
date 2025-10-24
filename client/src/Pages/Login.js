@@ -10,23 +10,24 @@ const Login = () => {
   const navigate = useNavigate();
   const loginUser = async (event) => {
     event.preventDefault();
-    const response = await fetch("http://localhost:5000/api/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
-    const data = await response.json();
-    if (data.success) {
-      navigate("/Dashboard");
-    } else {
-      alert(data.message);
-    }
-  };
+    navigate("/Dashboard");
+};
+    // const response = await fetch("http://localhost:5000/api/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     email,
+    //     password,
+    //   }),
+    // });
+    // const data = await response.json();
+    // if (data.success) {
+    // } else {
+    //   alert(data.message);
+    // }
+  
   return (
     <div
       className="flex flex-col items-center justify-center h-screen"

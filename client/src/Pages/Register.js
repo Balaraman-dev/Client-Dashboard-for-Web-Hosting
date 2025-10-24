@@ -12,26 +12,27 @@ const Register = () => {
 
   const registerUser = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/api/register", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          role,
-          password,
-        }),
-      });
-      const data = await response.json();
-      console.log(data); // Log the response data to the console
       navigate("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  }
+  //   try {
+  //     const response = await fetch("http://localhost:5000/api/register", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         name,
+  //         email,
+  //         role,
+  //         password,
+  //       }),
+  //     });
+  //     const data = await response.json();
+  //     console.log(data); // Log the response data to the console
+  //   } catch (error) {
+  //     console.error(error);
+  // };
+  
   return (
     <div
       className="flex flex-col items-center justify-center h-screen"
